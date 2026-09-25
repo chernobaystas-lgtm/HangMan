@@ -1,0 +1,109 @@
+# ================================
+# Visual Studio
+# ================================
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.rsuser
+
+# Visual Studio cache
+.vs/
+
+# ================================
+# Build output
+# ================================
+
+# Visual Studio configurations
+[Dd]ebug/
+[Rr]elease/
+
+# Architecture-specific output
+x64/
+x86/
+ARM/
+ARM64/
+Win32/
+
+# Common build folders
+[Bb]in/
+[Oo]bj/
+bld/
+
+# Logs
+[Ll]og/
+[Ll]ogs/
+*.log
+*.binlog
+
+# ================================
+# Visual Studio generated files
+# ================================
+
+*.obj
+*.o
+*.pdb
+*.idb
+*.ilk
+*.ipch
+*.iobj
+*.ipdb
+*.pch
+
+# IntelliSense / compiler artifacts
+*.sbr
+*.tlb
+*.tli
+*.tlh
+
+# ================================
+# Test results / coverage
+# ================================
+
+TestResults/
+[Tt]est[Rr]esult*/
+*.trx
+
+# ================================
+# Temporary / backup files
+# ================================
+
+*.tmp
+*.temp
+*.cache
+*.bak
+*~
+*.swp
+*.swo
+
+# ================================
+# OS generated files
+# ================================
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+
+# ================================
+# CMake (if you ever use it)
+# ================================
+
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+Makefile
+compile_commands.json
+
+# ================================
+# VS Code / JetBrains (optional)
+# ================================
+
+.vscode/
+.idea/
