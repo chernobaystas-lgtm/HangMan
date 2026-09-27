@@ -21,7 +21,10 @@ string encrypt(const string& word, int shift) {
 void generateWordsFile(const string& filename, int shift) {
     vector<string> words = {
         "apple", "banana", "orange", "computer", "keyboard",
-        "monitor", "elephant", "guitar", "library", "window"
+        "monitor", "elephant", "guitar", "library", "window",
+        "bottle", "picture", "mountain", "bicycle", "chocolate",
+        "airport", "hospital", "language", "notebook", "calendar",
+        "umbrella", "sandwich", "triangle", "dinosaur", "adventure"
     };
 
     ofstream file(filename);

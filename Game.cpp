@@ -1,6 +1,12 @@
 #include "Game.h"
 #include "Common.h"
 
+
+Game::Game(const string& word) : secretWord(word), mistakes(0) {
+    maxMistakes = static_cast<int>(hangmanStages.size()) - 1;
+    startTime = chrono::steady_clock::now();
+}
+
 void Game::showWordProgress() const {
     for (char c : secretWord) {
         bool found = false;
@@ -48,6 +54,7 @@ void Game::drawHangman() const {
 
 void Game::play() {
     while (mistakes < maxMistakes && !isWordGuessed()) {
+        system("cls");
         drawHangman();
         showWordProgress();
 
@@ -58,6 +65,12 @@ void Game::play() {
         cout << "Enter a letter: ";
         char letter;
         cin >> letter;
+
+        if (!isalpha(letter)) {
+            cout << "Please enter a letter, not a digit or symbol!\n";
+            continue;
+        }
+
         letter = tolower(letter);
 
         if (isLetterGuessed(letter)) {
