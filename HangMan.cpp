@@ -1,4 +1,6 @@
 ﻿#include "Common.h"
+#include "WordManager.h"
+#include "Game.h"
 
 
 string encrypt(const string& word, int shift) {
@@ -31,14 +33,14 @@ void generateWordsFile(const string& filename, int shift) {
     file.close();
 }
 
-int main()
-{
-    SetConsoleOutputCP(CP_UTF8);
-    SetConsoleCP(CP_UTF8);
+int main() {
+    srand(time(nullptr));
 
-    generateWordsFile("Words.txt", 3);
-    cout << "File generated!\n";
+    WordManager wordManager("Words.txt", 3);
+    string word = wordManager.getRandomWord();
+
+    Game game(word);
+    game.play();
 
     return 0;
 }
-
