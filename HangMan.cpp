@@ -9,7 +9,7 @@ string encrypt(const string& word, int shift) {
     for (char& c : result) {
         if (c >= 'a' && c <= 'z') {
             c = 'a' + (c - 'a' + shift) % 26;
-        }
+        }                                                                   // snjndsj
         else if (c >= 'A' && c <= 'Z') {
             c = 'A' + (c - 'A' + shift) % 26;
         }
@@ -29,7 +29,7 @@ void generateWordsFile(const string& filename, int shift) {
 
     ofstream file(filename);
 
-    for (const auto& word : words) {
+    for (const auto& word : words) {                                                // if
         file << encrypt(word, shift) << "\n";
     }
 
@@ -37,13 +37,20 @@ void generateWordsFile(const string& filename, int shift) {
 }
 
 int main() {
-    srand(time(nullptr));
+    srand(static_cast<unsigned int>(time(nullptr)));
 
     WordManager wordManager("Words.txt", 3);
-    string word = wordManager.getRandomWord();
+    char answer;
 
-    Game game(word);
-    game.play();
+    do {
+        string word = wordManager.getRandomWord();
+        Game game(word);
+        game.play();
+
+        cout << "\nPlay again? (y/n): ";
+        cin >> answer;
+
+    } while (tolower(answer) == 'y');
 
     return 0;
 }
